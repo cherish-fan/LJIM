@@ -1,0 +1,58 @@
+//
+//  IMDemo.pch
+//  IMDemo
+//
+//  Created by 梁建 on 14/12/1.
+//  Copyright (c) 2014年 梁建. All rights reserved.
+//
+
+
+
+#import <Availability.h>
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
+#import "XMPPFramework.h"
+
+#define XMPP_USER_NAME @"userID"
+#define XMPP_USER_PASS @"pass"
+
+#define NOTIFY_CHAT_MSG @"chatNotify"
+#define NOTIFY_Friends_Request @"friendsRequest"
+
+#define XMPP_HOST_NAME @"liangjiandemacbook-air.local"
+#define XMPP_MUC_SERVICE @"conference.liangjiandemacbook-air.local"
+
+#define DEGREES_TO_RADIANS(angle) ((angle)/180.0 *M_PI)
+#define RADIANS_TO_DEGREES(radians) ((radians)*(180.0/M_PI))
+#define LOGOUT  @"Logout"
+
+#define NOTIFY_BACK_CHAT @"notify_back_chat"
+
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+//获取设备的物理宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+//判断版本
+#define IOS7 [[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0
+/**
+ *  在编译的时候用MyLog打印,在调试的时候不打印,节省性能
+ */
+#ifdef DEBUG
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else
+#define MyLog(...)
+#endif
+
+#endif
+
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
